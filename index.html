@@ -10,7 +10,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Crect width='200' height='200' rx='52' fill='%235B5BFF'/%3E%3Cpath d='M44 60V120Q44 140 64 140H136Q156 140 156 120V60' fill='none' stroke='%23fff' stroke-width='14' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M68 80L100 112L156 44' fill='none' stroke='%23C7F464' stroke-width='16' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
 <style>
-/* ================= Paleta de Inbly (igual a lib/app/tema.dart) ================= */
 :root{
   --ink:#0B0F1A; --ink-panel:#141927; --ink-borde:#232A3B;
   --paper:#F4F6FB; --paper-panel:#FFFFFF; --paper-borde:#D5DAE6;
@@ -26,24 +25,24 @@ body{font-family:var(--fuente);color:var(--ink);background:var(--paper);font-siz
 a{color:inherit;text-decoration:none}
 svg{display:block}
 .contenedor{max-width:var(--ancho);margin:0 auto;padding:0 24px}
-.etiqueta{font-family:var(--mono);font-size:13px;font-weight:500;color:var(--signal)}
+.etiqueta{font-family:var(--fuente);font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--signal)}
 h1,h2,h3{letter-spacing:-.025em;line-height:1.1;font-weight:600}
 h2{font-size:clamp(32px,4.4vw,52px)}
 .sub{color:var(--slate);font-size:19px;max-width:600px}
 .punto{width:8px;height:8px;border-radius:50%;background:var(--volt);box-shadow:0 0 0 4px rgba(199,244,100,.15);flex:none;display:inline-block}
 
-/* ================= Botones ================= */
+/* Botones */
 .btn{display:inline-flex;align-items:center;gap:10px;height:48px;padding:0 24px;border-radius:var(--r-control);font-weight:600;font-size:15.5px;transition:transform .15s,box-shadow .15s,border-color .15s;cursor:pointer;border:1px solid transparent}
 .btn-signal{background:var(--signal);color:#fff;box-shadow:0 8px 24px -8px rgba(91,91,255,.7)}
 .btn-signal:hover{transform:translateY(-1px);box-shadow:0 12px 30px -8px rgba(91,91,255,.9)}
 .btn-borde{border-color:var(--ink-borde);color:var(--paper)}
 .btn-borde:hover{border-color:var(--suave)}
 
-/* ================= Marca ================= */
+/* Marca */
 .marca{display:flex;align-items:center;gap:10px;font-weight:600;font-size:24px;letter-spacing:-.04em}
 .marca svg{width:30px;height:30px}
 
-/* ================= Navegación ================= */
+/* Navegación */
 .nav{position:fixed;inset:0 0 auto 0;z-index:50;transition:background .25s,border-color .25s;border-bottom:1px solid transparent}
 .nav.con-fondo{background:rgba(11,15,26,.85);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-color:var(--ink-borde)}
 .nav .contenedor{display:flex;align-items:center;justify-content:space-between;height:68px}
@@ -54,11 +53,9 @@ h2{font-size:clamp(32px,4.4vw,52px)}
 .nav-links .btn{height:40px;padding:0 18px;font-size:14px;color:#fff}
 .menu-btn{display:none;background:none;border:0;color:var(--paper);cursor:pointer;padding:6px}
 
-/* ================= Hero (igual que antes) ================= */
-.hero{background:var(--ink);color:var(--paper);padding:150px 0 110px;position:relative;overflow:hidden}
-.hero::before{content:"";position:absolute;width:900px;height:900px;right:-300px;top:-380px;background:radial-gradient(circle,rgba(91,91,255,.32),transparent 62%);pointer-events:none}
-.hero::after{content:"";position:absolute;inset:0;background-image:linear-gradient(var(--ink-borde) 1px,transparent 1px),linear-gradient(90deg,var(--ink-borde) 1px,transparent 1px);background-size:56px 56px;opacity:.28;mask-image:radial-gradient(ellipse at 70% 30%,#000 10%,transparent 65%);-webkit-mask-image:radial-gradient(ellipse at 70% 30%,#000 10%,transparent 65%);pointer-events:none}
-.hero .contenedor{position:relative;z-index:1;display:grid;grid-template-columns:1fr 1.08fr;gap:56px;align-items:center}
+/* Inicio */
+.hero{background:var(--ink);color:var(--paper);padding:150px 0 110px}
+.hero .contenedor{display:grid;grid-template-columns:1fr 1.08fr;gap:56px;align-items:center}
 .pastilla{display:inline-flex;align-items:center;gap:10px;border:1px solid var(--ink-borde);background:var(--ink-panel);border-radius:999px;padding:7px 14px;font-size:13px;color:var(--suave)}
 .hero h1{font-size:clamp(40px,5.6vw,66px);letter-spacing:-.035em;margin:24px 0 22px}
 .hero h1 em{font-style:normal;color:var(--signal)}
@@ -66,8 +63,7 @@ h2{font-size:clamp(32px,4.4vw,52px)}
 .hero-acciones{display:flex;gap:12px;flex-wrap:wrap}
 .hero-nota{margin-top:30px;display:flex;align-items:center;gap:10px;color:var(--suave);font-size:13.5px}
 
-.app{background:var(--ink-panel);border:1px solid var(--ink-borde);border-radius:16px;box-shadow:0 50px 100px -30px rgba(0,0,0,.8),0 0 0 1px rgba(91,91,255,.08);overflow:hidden;font-size:12.5px;line-height:1.5;transform:perspective(1600px) rotateY(-6deg) rotateX(3deg);transition:transform .6s}
-.app:hover{transform:perspective(1600px) rotateY(0) rotateX(0)}
+.app{background:var(--ink-panel);border:1px solid var(--ink-borde);border-radius:16px;box-shadow:0 40px 80px -30px rgba(0,0,0,.8);overflow:hidden;font-size:12.5px;line-height:1.5}
 .app-barra{height:30px;display:flex;justify-content:flex-end;border-bottom:1px solid var(--ink-borde)}
 .app-barra span{width:38px;display:grid;place-items:center;color:var(--slate);font-size:11px}
 .app-cuerpo{display:grid;grid-template-columns:168px 1fr;min-height:400px}
@@ -111,24 +107,20 @@ h2{font-size:clamp(32px,4.4vw,52px)}
 .franja span{color:var(--suave);font-size:13px}
 .franja b{color:var(--paper);font-weight:600;font-size:15px;opacity:.85}
 
-/* ================= Secciones (sin tarjetas) ================= */
+/* Secciones */
 section{padding:120px 0}
 .claro{background:var(--paper)}
 .blanco{background:var(--paper-panel)}
 .oscuro{background:var(--ink);color:var(--paper)}
 
-/* Declaración grande */
 .declaracion{font-size:clamp(26px,3.3vw,40px);line-height:1.3;letter-spacing:-.02em;font-weight:500;max-width:980px}
-.declaracion .gris{color:#9AA1B2}
 .declaracion .tachado{color:#9AA1B2;text-decoration:line-through;text-decoration-color:var(--ember);text-decoration-thickness:2px}
 .declaracion strong{font-weight:600;color:var(--ink)}
 .declaracion strong .resalte{background:linear-gradient(transparent 62%,var(--volt) 62%);padding:0 2px}
 
-/* Encabezado de sección a dos columnas */
 .cabecera{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:end;margin-bottom:64px}
 .cabecera .etiqueta{display:block;margin-bottom:16px}
 
-/* Pasos como filas */
 .pasos{border-top:1px solid var(--paper-borde)}
 .paso{display:grid;grid-template-columns:120px 1fr 1.25fr;gap:40px;padding:44px 0;border-bottom:1px solid var(--paper-borde);align-items:start}
 .paso .num{font-family:var(--mono);font-size:56px;line-height:1;font-weight:500;color:var(--signal);letter-spacing:-.04em}
@@ -136,7 +128,6 @@ section{padding:120px 0}
 .paso p{color:var(--slate)}
 .paso .compat{display:block;margin-top:14px;font-family:var(--mono);font-size:13px;color:var(--ink)}
 
-/* Funciones como lista de dos columnas */
 .funciones{display:grid;grid-template-columns:1fr 1fr;column-gap:72px}
 .func{display:grid;grid-template-columns:28px 1fr;gap:14px;padding:30px 0;border-top:1px solid var(--paper-borde)}
 .func svg{width:22px;height:22px;color:var(--signal);margin-top:4px}
@@ -144,7 +135,6 @@ section{padding:120px 0}
 .func p{color:var(--slate);font-size:16px}
 .func code{font-family:var(--mono);font-size:13.5px;color:var(--ink);background:rgba(91,91,255,.08);padding:2px 7px;border-radius:5px}
 
-/* Validación */
 .validacion{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center}
 .validacion h2{margin:16px 0 18px}
 .resultados{margin-top:34px;border-top:1px solid var(--paper-borde)}
@@ -172,7 +162,6 @@ section{padding:120px 0}
 .rep-fila small{color:var(--slate)}
 .rep-fila code{font-family:var(--mono);font-size:11.5px;color:var(--slate)}
 
-/* Seguridad: filas sobre fondo oscuro */
 .seguridad{display:grid;grid-template-columns:1fr 1.25fr;gap:72px}
 .seguridad h2{position:sticky;top:110px}
 .seguridad .etiqueta{color:var(--volt);display:block;margin-bottom:16px}
@@ -182,10 +171,7 @@ section{padding:120px 0}
 .promesas p{color:var(--suave)}
 .promesas b{color:var(--paper);font-weight:600;display:block;font-size:19px;margin-bottom:4px;letter-spacing:-.01em}
 
-/* Contacto: banda completa */
-.contacto{background:var(--signal);color:#fff;padding:110px 0;position:relative;overflow:hidden}
-.contacto::after{content:"";position:absolute;right:-160px;top:-200px;width:620px;height:620px;border-radius:50%;background:radial-gradient(circle,rgba(199,244,100,.3),transparent 62%);pointer-events:none}
-.contacto .contenedor{position:relative;z-index:1}
+.contacto{background:var(--signal);color:#fff;padding:110px 0}
 .contacto h2{font-size:clamp(38px,6vw,76px);letter-spacing:-.04em;max-width:900px}
 .contacto p{font-size:19px;max-width:620px;margin:22px 0 36px;color:rgba(255,255,255,.88)}
 .contacto .btn{background:var(--ink);color:var(--paper);height:56px;padding:0 28px;font-size:16px}
@@ -194,7 +180,7 @@ section{padding:120px 0}
 .para-quien{margin-top:56px;padding-top:26px;border-top:1px solid rgba(255,255,255,.25);font-size:16px;color:rgba(255,255,255,.85)}
 .para-quien b{color:#fff;font-weight:600}
 
-/* ================= Pie ================= */
+/* Pie */
 footer{background:var(--ink);color:var(--suave);padding:56px 0 34px;font-size:14px;line-height:1.6}
 .pie{display:flex;justify-content:space-between;gap:40px;flex-wrap:wrap;padding-bottom:36px;border-bottom:1px solid var(--ink-borde)}
 .pie .marca{color:var(--paper);margin-bottom:12px}
@@ -206,7 +192,7 @@ footer{background:var(--ink);color:var(--suave);padding:56px 0 34px;font-size:14
 .pie-bajo{display:flex;justify-content:space-between;align-items:center;padding-top:22px;flex-wrap:wrap;gap:12px;font-size:13px}
 .pie-bajo span:last-child{display:flex;align-items:center;gap:10px}
 
-/* ================= Vista legal (pestaña aparte) ================= */
+/* Vista legal */
 #vistaLegal{display:none;min-height:100vh;background:var(--paper)}
 body.legal #vistaLanding{display:none}
 body.legal #vistaLegal{display:block}
@@ -227,11 +213,9 @@ body.legal #vistaLegal{display:block}
 .doc h2{font-size:20px;letter-spacing:-.01em;margin:40px 0 12px}
 .doc p,.doc li{color:#2E3446;font-size:16.5px;margin-bottom:12px}
 .doc ul{padding-left:22px}
-.doc .resumen{background:var(--paper-panel);border-left:3px solid var(--signal);border-radius:var(--r-control);padding:20px 24px;margin-bottom:12px}
-.doc .resumen p{margin:0}
 .legal-pie{border-top:1px solid var(--paper-borde);padding:28px 24px;text-align:center;color:var(--slate);font-size:13.5px}
 
-/* ================= Aparición al bajar ================= */
+/* Aparición al bajar */
 .aparece{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}
 .aparece.visible{opacity:1;transform:none}
 @media (prefers-reduced-motion:reduce){
@@ -240,12 +224,11 @@ body.legal #vistaLegal{display:block}
   html{scroll-behavior:auto}
 }
 
-/* ================= Pantallas pequeñas ================= */
+/* Pantallas pequeñas */
 @media (max-width:980px){
   .hero .contenedor,.validacion,.seguridad,.cabecera{grid-template-columns:1fr}
   .cabecera{gap:20px}
   .hero{padding-top:120px}
-  .app{transform:none}
   .paso{grid-template-columns:80px 1fr;gap:12px 28px}
   .paso p{grid-column:2}
   .paso .num{font-size:40px}
@@ -271,7 +254,6 @@ body.legal #vistaLegal{display:block}
 </head>
 <body>
 
-<!-- Símbolo de Inbly: mismo dibujo que lib/shared/marca.dart -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <symbol id="simbolo" viewBox="0 0 200 200">
     <rect width="200" height="200" rx="52" fill="#5B5BFF"/>
@@ -280,9 +262,6 @@ body.legal #vistaLegal{display:block}
   </symbol>
 </svg>
 
-<!-- ======================================================= -->
-<!--                       PÁGINA PRINCIPAL                   -->
-<!-- ======================================================= -->
 <div id="vistaLanding">
 
 <header class="nav" id="nav">
@@ -301,7 +280,6 @@ body.legal #vistaLegal{display:block}
   </div>
 </header>
 
-<!-- ================= Inicio ================= -->
 <section class="hero" id="inicio">
   <div class="contenedor">
     <div>
@@ -314,7 +292,7 @@ body.legal #vistaLegal{display:block}
         </a>
         <a href="#como-funciona" class="btn btn-borde">Cómo funciona</a>
       </div>
-      <div class="hero-nota"><span class="punto"></span>Todo cae en su sitio.</div>
+      <div class="hero-nota"><span class="punto"></span>Aplicación para Windows · Editor verificado por Microsoft</div>
     </div>
 
     <div class="app" aria-hidden="true">
@@ -362,10 +340,9 @@ body.legal #vistaLegal{display:block}
   </div>
 </div>
 
-<!-- ================= El problema, en una frase ================= -->
 <section class="blanco">
   <div class="contenedor">
-    <span class="etiqueta aparece" style="display:block;margin-bottom:22px">// cada cierre de mes</span>
+    <span class="etiqueta aparece" style="display:block;margin-bottom:22px">Cada cierre de mes</span>
     <p class="declaracion aparece">
       <span class="tachado">Abrir correo por correo.</span>
       <span class="tachado">Descomprimir zips dentro de zips.</span>
@@ -376,11 +353,10 @@ body.legal #vistaLegal{display:block}
   </div>
 </section>
 
-<!-- ================= Cómo funciona ================= -->
 <section class="claro" id="como-funciona">
   <div class="contenedor">
     <div class="cabecera aparece">
-      <div><span class="etiqueta">// cómo funciona</span><h2>Tres pasos. El resto cae en su sitio.</h2></div>
+      <div><span class="etiqueta">Cómo funciona</span><h2>Conectas, descargas y validas.</h2></div>
       <p class="sub">Lo configuras una vez por empresa. Después, cada mes es elegir el periodo y pulsar descargar.</p>
     </div>
     <div class="pasos">
@@ -406,12 +382,11 @@ body.legal #vistaLegal{display:block}
   </div>
 </section>
 
-<!-- ================= Funciones ================= -->
 <section class="blanco" id="funciones">
   <div class="contenedor">
     <div class="cabecera aparece">
-      <div><span class="etiqueta">// funciones</span><h2>Pensado para muchas facturas y varias empresas.</h2></div>
-      <p class="sub">Lo que hace Inbly mientras tú te ocupas de lo importante.</p>
+      <div><span class="etiqueta">Funciones</span><h2>Pensado para muchas facturas y varias empresas.</h2></div>
+      <p class="sub">Lo que Inbly resuelve en cada descarga.</p>
     </div>
     <div class="funciones">
       <div class="func aparece">
@@ -436,18 +411,17 @@ body.legal #vistaLegal{display:block}
       </div>
       <div class="func aparece">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/></svg>
-        <div><h3>Deshacer y reindexar</h3><p>¿Descargaste el periodo equivocado? Deshaz esa descarga. ¿Moviste la carpeta? Inbly la vuelve a leer y corrige todo.</p></div>
+        <div><h3>Deshacer y reindexar</h3><p>¿Descargaste el periodo equivocado? Deshaz esa descarga. ¿Moviste la carpeta? Inbly la vuelve a leer y corrige las rutas.</p></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ================= Validación ================= -->
 <section class="claro" id="validar">
   <div class="contenedor validacion">
     <div class="aparece">
-      <span class="etiqueta">// validación con la DIAN</span>
-      <h2>Sabes qué falta antes de que falte.</h2>
+      <span class="etiqueta">Validación con la DIAN</span>
+      <h2>Qué coincide, qué falta y qué sobra.</h2>
       <p class="sub">Carga el Excel de documentos recibidos que descargas de la DIAN. Inbly lo cruza factura por factura con lo que ya tienes.</p>
       <div class="resultados">
         <div><b>Coinciden</b><span>La DIAN las reporta y ya están descargadas.</span></div>
@@ -474,30 +448,29 @@ body.legal #vistaLegal{display:block}
   </div>
 </section>
 
-<!-- ================= Seguridad ================= -->
 <section class="oscuro" id="seguridad">
   <div class="contenedor seguridad">
     <div class="aparece">
-      <span class="etiqueta">// seguridad y privacidad</span>
-      <h2>Tu correo es tuyo. Inbly solo busca facturas.</h2>
+      <span class="etiqueta">Seguridad y privacidad</span>
+      <h2>Inbly solo lee tu correo para buscar facturas.</h2>
     </div>
     <div class="promesas">
       <div class="aparece"><span class="punto"></span><p><b>Sin tu contraseña de Microsoft.</b>Con Outlook y Microsoft 365 autorizas a Inbly desde la página oficial de Microsoft y puedes retirar ese permiso cuando quieras.</p></div>
       <div class="aparece"><span class="punto"></span><p><b>Las credenciales se quedan en tu equipo.</b>Las contraseñas de aplicación y los permisos de Microsoft se guardan en el Administrador de credenciales de Windows de tu computador.</p></div>
-      <div class="aparece"><span class="punto"></span><p><b>Tus archivos, en tu carpeta.</b>Los XML y PDF se guardan donde tú elijas. En la nube solo queda el índice: proveedor, número, fecha y CUFE.</p></div>
+      <div class="aparece"><span class="punto"></span><p><b>Tus archivos, en tu carpeta.</b>Los XML y PDF se guardan donde tú elijas. En la nube queda tu cuenta, tus empresas y el índice de facturas y validaciones; nunca los archivos ni el texto de tus correos.</p></div>
       <div class="aparece"><span class="punto"></span><p><b>No envía, no borra, no marca.</b>Inbly no envía correos desde tu cuenta, no borra mensajes ni los marca como leídos, y no guarda el texto de tus correos.</p></div>
     </div>
   </div>
 </section>
 
-<!-- ================= Contacto ================= -->
 <section class="contacto" id="contacto">
   <div class="contenedor">
-    <h2 class="aparece">Pon tus facturas en su sitio.</h2>
+    <h2 class="aparece">Hablemos.</h2>
     <p class="aparece">Inbly es una aplicación para Windows. Creamos tu cuenta, ajustamos tu plan según el número de empresas y correos, y te acompañamos en la primera descarga.</p>
     <div class="aparece">
       <a class="btn" href="mailto:hola@inblycol.com?subject=Quiero%20conocer%20Inbly">Escríbenos</a>
       <a class="correo" href="mailto:hola@inblycol.com">hola@inblycol.com</a>
+      <a class="correo" href="tel:+573205214270">+57 320 521 4270</a>
     </div>
     <p class="para-quien aparece">Para <b>contadores independientes</b>, <b>firmas contables</b> y <b>empresas con varias razones sociales</b>.</p>
   </div>
@@ -519,15 +492,16 @@ body.legal #vistaLegal{display:block}
           <a href="#seguridad">Seguridad</a>
         </div>
         <div>
-          <h4>Legal</h4>
+          <h4>Legal y contacto</h4>
           <a href="#privacidad" target="_blank" rel="noopener">Política de datos</a>
           <a href="#terminos" target="_blank" rel="noopener">Términos de uso</a>
           <a href="mailto:hola@inblycol.com">hola@inblycol.com</a>
+          <a href="tel:+573205214270">+57 320 521 4270</a>
         </div>
       </div>
     </div>
     <div class="pie-bajo">
-      <span>© 2026 Inbly es un producto de Casa Bravio S.A.S. · NIT 901.923.526 · Caldas, Antioquia</span>
+      <span>© 2026 Inbly es un producto de Casa Bravio S.A.S. · NIT 901.923.526 · Caldas, Antioquia, Colombia</span>
       <span><span class="punto"></span>Todo cae en su sitio.</span>
     </div>
   </div>
@@ -535,9 +509,6 @@ body.legal #vistaLegal{display:block}
 
 </div>
 
-<!-- ======================================================= -->
-<!--          PÁGINA LEGAL (se abre en pestaña aparte)        -->
-<!-- ======================================================= -->
 <div id="vistaLegal">
   <div class="legal-barra">
     <div class="contenedor">
@@ -554,29 +525,27 @@ body.legal #vistaLegal{display:block}
     </div>
   </nav>
 
-  <!-- ---------- Política de tratamiento de datos ---------- -->
   <article class="doc" id="docPrivacidad">
     <h1>Política de tratamiento de datos personales</h1>
-    <p class="vigencia">Vigente desde el 3 de octubre de 2026</p>
-
-    <div class="resumen"><p><b>En resumen:</b> Inbly revisa los correos que tú conectas solo para encontrar facturas electrónicas. Los archivos se guardan en tu computador y las credenciales de tus correos en el Administrador de credenciales de Windows. En nuestros servidores guardamos tu cuenta, tus empresas y un índice de las facturas. No vendemos tus datos.</p></div>
+    <p class="vigencia">Versión 1.1 · Última actualización: 8 de octubre de 2026</p>
 
     <h2>1. Responsable del tratamiento</h2>
-    <p>Inbly es un producto de <b>Casa Bravio S.A.S.</b>, sociedad colombiana identificada con NIT 901.923.526, con domicilio en Caldas, Antioquia, Colombia. Correo de contacto: <b>hola@inblycol.com</b>. Sitio web: inblycol.com.</p>
+    <p>Inbly es un producto de <b>Casa Bravio S.A.S.</b>, sociedad colombiana identificada con NIT 901.923.526, con domicilio en Caldas, Antioquia, Colombia. Correo de contacto: <b>hola@inblycol.com</b>. Teléfono: <b>+57 320 521 4270</b>. Sitio web: inblycol.com.</p>
     <p>Esta política se expide en cumplimiento de la Ley 1581 de 2012 y sus decretos reglamentarios.</p>
 
     <h2>2. Qué datos tratamos</h2>
     <ul>
-      <li><b>Datos de la cuenta:</b> nombre y correo electrónico del usuario. La contraseña de Inbly la gestiona nuestro proveedor de autenticación de forma cifrada; nosotros no podemos verla.</li>
-      <li><b>Datos de las empresas:</b> nombre, NIT, color elegido y logo, si el usuario lo sube.</li>
+      <li><b>Datos de la cuenta:</b> nombre y correo electrónico del usuario. La contraseña que eliges en tu primer ingreso la gestiona nuestro proveedor de autenticación de forma cifrada; nosotros no podemos verla.</li>
+      <li><b>Datos de las empresas:</b> nombre, NIT, color elegido y logo, si el usuario lo sube. El logo queda en una dirección pública para poder mostrarlo en los reportes.</li>
       <li><b>Datos de los correos conectados:</b> dirección de correo, tipo de cuenta y servidor de correo.</li>
       <li><b>Índice de facturas:</b> tipo de documento, nombre y NIT del proveedor, número, fecha, CUFE o CUDE, mes y la ruta del archivo en el computador del usuario, además del historial de descargas.</li>
+      <li><b>Validaciones y cierres:</b> el resultado de cada validación contra el listado de la DIAN (cifras por mes y la lista de documentos pendientes: proveedor, NIT, número, fecha, total y CUFE) y los cierres de mes, con su nota, quién los hizo y cuándo.</li>
     </ul>
     <p><b>Lo que no guardamos en nuestros servidores:</b> las contraseñas de aplicación de los correos ni los permisos de acceso de Microsoft. Estos se guardan en el Administrador de credenciales de Windows del computador donde se usa Inbly. Tampoco guardamos los archivos de las facturas ni el texto de los correos. Si esto cambia, actualizaremos esta política antes de hacerlo.</p>
 
     <h2>3. Acceso al correo electrónico</h2>
     <p>Cuando el usuario conecta un buzón, Inbly revisa los correos del periodo que el usuario elige para encontrar adjuntos de facturas electrónicas (archivos XML, PDF y ZIP). Esos adjuntos se guardan en la carpeta que el usuario escoja en su computador. Inbly no envía correos, no borra mensajes, no los marca como leídos y no conserva el contenido de los correos.</p>
-    <p>En cuentas de Outlook y Microsoft 365, el usuario autoriza el acceso desde la página oficial de Microsoft y puede retirarlo en cualquier momento desde la configuración de su cuenta o de su organización. En cuentas de Gmail se usa una contraseña de aplicación que el usuario puede revocar desde su cuenta de Google.</p>
+    <p>En cuentas de Outlook y Microsoft 365, el usuario autoriza el acceso desde la página oficial de Microsoft y puede retirarlo en cualquier momento desde la configuración de su cuenta o de su organización. El permiso que Microsoft muestra es de lectura y escritura por IMAP, porque Microsoft no ofrece uno de solo lectura para ese protocolo; Inbly solo lo usa para leer. En cuentas de Gmail se usa una contraseña de aplicación que el usuario puede revocar desde su cuenta de Google.</p>
 
     <h2>4. Finalidades</h2>
     <ul>
@@ -591,13 +560,18 @@ body.legal #vistaLegal{display:block}
     <p>Las facturas pueden contener datos de proveedores que son personas naturales. Respecto de esos datos, el cliente de Inbly actúa como responsable del tratamiento y Casa Bravio S.A.S. como encargado, tratándolos solo para prestar el servicio y siguiendo las instrucciones del cliente.</p>
 
     <h2>6. Con quién compartimos los datos</h2>
-    <p>No vendemos ni alquilamos datos personales. Usamos proveedores de infraestructura que actúan como encargados: un servicio de base de datos y autenticación en la nube, y un servicio de correo para los mensajes del servicio. Inbly también se conecta con Microsoft y Google cuando el usuario conecta sus buzones. Solo entregaremos datos a autoridades cuando una norma o una orden legítima lo exija.</p>
+    <p>No vendemos ni alquilamos datos personales. Usamos estos proveedores, que actúan como encargados:</p>
+    <ul>
+      <li><b>Supabase</b> (base de datos y autenticación), con servidores en São Paulo, Brasil.</li>
+      <li><b>Google</b> (Gmail), para enviar los mensajes del servicio, como el de bienvenida.</li>
+    </ul>
+    <p>Inbly también se conecta con Microsoft y Google cuando el usuario conecta sus buzones. Solo entregaremos datos a autoridades cuando una norma o una orden legítima lo exija.</p>
 
     <h2>7. Transferencia internacional</h2>
-    <p>Algunos de nuestros proveedores tienen servidores fuera de Colombia. Al aceptar esta política, el usuario autoriza la transferencia y transmisión de sus datos a esos países, que se hace con proveedores que aplican medidas de seguridad adecuadas.</p>
+    <p>Nuestra base de datos está alojada en São Paulo, Brasil, y los mensajes del servicio se envían a través de Google. Al aceptar esta política, el usuario autoriza la transferencia y transmisión de sus datos a esos proveedores, que aplican medidas de seguridad adecuadas.</p>
 
     <h2>8. Seguridad</h2>
-    <p>Aplicamos medidas técnicas y administrativas razonables para proteger la información: conexiones cifradas, control de acceso por usuario y empresa en la base de datos y almacenamiento de credenciales en el equipo del usuario. Ningún sistema es completamente infalible; si ocurre un incidente que afecte datos personales, lo informaremos según lo exige la ley.</p>
+    <p>Aplicamos medidas técnicas y administrativas razonables para proteger la información: conexiones cifradas, control de acceso por usuario y empresa en la base de datos y almacenamiento de credenciales en el equipo del usuario. El equipo de soporte de Inbly puede consultar la información de las cuentas y empresas guardada en nuestros servidores únicamente para administrar los planes y dar soporte. Ningún sistema es completamente infalible; si ocurre un incidente que afecte datos personales, lo informaremos según lo exige la ley.</p>
 
     <h2>9. Conservación</h2>
     <p>Conservamos los datos mientras la cuenta esté activa y durante el tiempo necesario para cumplir obligaciones legales. Al terminar el servicio, el usuario puede pedir la eliminación de su información en nuestros servidores. Los archivos de facturas guardados en su computador permanecen bajo su control.</p>
@@ -623,7 +597,6 @@ body.legal #vistaLegal{display:block}
     <p>Si cambiamos esta política de forma importante, lo informaremos por correo o dentro de la aplicación antes de que el cambio entre en vigor.</p>
   </article>
 
-  <!-- ---------- Términos de uso ---------- -->
   <article class="doc" id="docTerminos">
     <h1>Términos de uso</h1>
     <p class="vigencia">Vigentes desde el 3 de octubre de 2026</p>
@@ -665,11 +638,10 @@ body.legal #vistaLegal{display:block}
     <p>Para cualquier duda sobre estos términos escríbenos a <b>hola@inblycol.com</b>.</p>
   </article>
 
-  <div class="legal-pie">© 2026 Inbly es un producto de Casa Bravio S.A.S. · NIT 901.923.526 · Caldas, Antioquia</div>
+  <div class="legal-pie">© 2026 Inbly es un producto de Casa Bravio S.A.S. · NIT 901.923.526 · Caldas, Antioquia, Colombia</div>
 </div>
 
 <script>
-// ---------- Cambia entre la página principal y la página legal ----------
 const tituloBase = document.title;
 function mostrarVista() {
   const h = location.hash;
@@ -690,7 +662,6 @@ function mostrarVista() {
 window.addEventListener('hashchange', mostrarVista);
 mostrarVista();
 
-// ---------- Navegación ----------
 const nav = document.getElementById('nav');
 const menu = document.getElementById('menu');
 const menuBtn = document.getElementById('menuBtn');
@@ -703,7 +674,6 @@ menuBtn.addEventListener('click', () => {
 });
 menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => menu.classList.remove('abierto')));
 
-// ---------- Aparición suave al bajar ----------
 const obs = new IntersectionObserver(entradas => {
   entradas.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
 }, { threshold: 0.12 });
@@ -712,7 +682,6 @@ document.querySelectorAll('.aparece').forEach((el, i) => {
   obs.observe(el);
 });
 
-// ---------- Demostración: la pantalla Descargar de Inbly ----------
 const facturas = [
   'DISTRIBUIDORA ANDINA SAS - FE10482',
   'SERVICIOS CLOUD COLOMBIA - SC88120',
